@@ -75,11 +75,6 @@ StD0Hists::StD0Hists(std::string fileBaseName = "")
    hD0CentVzPsiPtEtaMDphiLikeSignMixed = new THnF("hD0CentVzPsiPtEtaMDphiLikeSignMixed", "hD0CentVzPsiPtEtaMDphiLikeSignMixed", nDimMixed, nBinsMixed, xMinMixed, xMaxMixed);
    */
 
-   mSE_LS = new TH3F(Form("%s_se_ls_mass", fileBaseName.c_str()), "Same Event LS pair Invariant mass(K#pi);p_{T}(K#pi)(GeV/c);centrality;Mass_{K#pi}(GeV/c^{2})", 150, 0, 15, 9, 0, 9, 250, 0, 2.5);
-   mSE_US = new TH3F(Form("%s_se_us_mass", fileBaseName.c_str()), "Same Event US pair Invariant mass(K#pi);p_{T}(K#pi)(GeV/c);centrality;Mass_{K#pi}(GeV/c^{2})", 150, 0, 15, 9, 0, 9, 250, 0, 2.5);
-   mME_LS = new TH3F(Form("%s_me_ls_mass", fileBaseName.c_str()), "Mixed Event LS pair Invariant mass(K#pi);p_{T}(K#pi)(GeV/c);centrality;Mass_{K#pi}(GeV/c^{2})", 150, 0, 15, 9, 0, 9, 250, 0, 2.5);
-   mME_US = new TH3F(Form("%s_me_us_mass", fileBaseName.c_str()), "Mixed Event US pair Invariant mass(K#pi);p_{T}(K#pi)(GeV/c);centrality;Mass_{K#pi}(GeV/c^{2})", 150, 0, 15, 9, 0, 9, 250, 0, 2.5);
-
    float const maxDca = 0.3;
    int const nDcaBins = 300;
 
@@ -91,6 +86,7 @@ StD0Hists::StD0Hists(std::string fileBaseName = "")
    double const decayTopologyXMin[decayTopologyNDim] = {0, 0.0050, 0.0050, 0.0050, 0.0050}; 
    double const decayTopologyXMax[decayTopologyNDim] = {8, 0.0120, 0.0110, 0.0110, 0.1000}; 
 
+#ifdef __run_w_QA__
    //QA Foreground
    mSE_US_DecayTopology = new THnF("mSE_US_DecayTopology","mSE_US_DecayTopology;p_{T}(GeV/c);d0Dca2Vtx(cm);pDca(cm);kDca(cm);decayL(cm)",
                                                            decayTopologyNDim,decayTopologyBins,decayTopologyXMin,decayTopologyXMax);
@@ -116,7 +112,7 @@ StD0Hists::StD0Hists(std::string fileBaseName = "")
    mME_US_PionDca2Vtx = new TH3F(Form("%s_me_us_pionDca", fileBaseName.c_str()), "Same Event #pi dca 2 vertex ; p_{T} (GeV/c);centrality", 150, 0, 15, 9, 0, 9, nDcaBins,0,maxDca);
    mME_US_KaonDca2Vtx = new TH3F(Form("%s_me_us_kaonDca", fileBaseName.c_str()), "Same Event US K dca 2 vertex ; p_{T} (GeV/c);centrality", 150, 0, 15, 9, 0, 9, nDcaBins,0,maxDca);
    mME_US_D0Dca2Vtx = new TH3F(Form("%s_me_us_D0Dca2Vtx", fileBaseName.c_str()), "SameEvent US D0 dca 2 vertex ; p_{T} (GeV/c);centrality", 150, 0, 15, 9, 0, 9, 100, 0, 0.05);
-
+#endif __run_w_QA__
 }
 StD0Hists::~StD0Hists()
 {
@@ -126,6 +122,7 @@ void StD0Hists::closeFile()
 
    return;
 }
+#ifdef __run_w_QA__
 // QA histogram filling
 // --------------------------------------
 void StD0Hists::fillMixedEvtQADist(StMixerPair const&  pair, int const centrality)
@@ -345,3 +342,4 @@ void StD0Hists::fillSameEvt_LS_QADist(StMixerPair const&  pair, int const centra
       )
       mSE_LS_D0Dca2Vtx->Fill(pair.pt(), centrality, (pair.decayLength()) * sin(pair.pointingAngle()));
 }
+#endif

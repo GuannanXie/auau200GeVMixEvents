@@ -30,9 +30,11 @@ public:
    StD0Hists(std::string fileBaseName);
    virtual ~StD0Hists();
    void closeFile();
+#ifdef __run_w_QA__
    void fillSameEvt_US_QADist(StMixerPair const&, int const);
    void fillSameEvt_LS_QADist(StMixerPair const&, int const);
    void fillMixedEvtQADist(StMixerPair const&, int const);
+#endif
    //event level qa
    TH1D*      hTotalNumberOfEvents;
    TH2F*      hVzVpdVz;
@@ -71,13 +73,7 @@ public:
    THn* hD0CentPtMDphiEtaGapMixed;
    THn* hD0CentPtMDphiEtaGapLikeSignMixed;
 
-   //Topology distribution
-   TH3F* mSE_Vtx;
-   TH3F* mME_Vtx;
-   TH3F* mSE_LS;
-   TH3F* mSE_US;
-   TH3F* mME_LS;
-   TH3F* mME_US;
+#ifdef __run_w_QA__
    //QA hists
    THn*  mSE_US_DecayTopology;
    TH3F* mSE_US_PointingAngle;
@@ -101,6 +97,8 @@ public:
    TH3F* mME_US_PionDca2Vtx;
    TH3F* mME_US_KaonDca2Vtx;
    TH3F* mME_US_D0Dca2Vtx;
+#endif
+
 private:
 
    ClassDef(StD0Hists, 1);
