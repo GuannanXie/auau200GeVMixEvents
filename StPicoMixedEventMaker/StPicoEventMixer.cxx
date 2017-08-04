@@ -147,7 +147,8 @@ void StPicoEventMixer::mixEvents()
             while (dPhi >= (2.0/mHarmonic)*TMath::Pi()) dPhi -= (2.0/mHarmonic)*TMath::Pi();
 
             double toFill[5] = {mCentBin + 0.5, pair.pt(), pair.eta(), pair.m(), dPhi};
-            double toFillDaug[5] = {mCentBin + 0.5, pair.pt(), mEvents[0]->pionAt(iTrk1).gMom().perp(), pair.m(), mEvents[iEvt2]->kaonAt(iTrk2).gMom().perp()};
+            // double toFillDaug[5] = {mCentBin + 0.5, pair.pt(), mEvents[0]->pionAt(iTrk1).gMom().perp(), pair.m(), mEvents[iEvt2]->kaonAt(iTrk2).gMom().perp()};
+            double toFillDaug[7] = {mCentBin + 0.5, pair.pt(), mEvents[0]->pionAt(iTrk1).gMom().perp(), pair.m(), mEvents[iEvt2]->kaonAt(iTrk2).gMom().perp(), pair.lorentzVector().rapidity(), mEvents[0]->pionAt(iTrk1).charge() };
 	    //Daughter histograms
 #ifdef __run_w_DaugHisto__
 	    for(int ii = 0; ii < mxeCuts::nCutsSets; ++ii){
