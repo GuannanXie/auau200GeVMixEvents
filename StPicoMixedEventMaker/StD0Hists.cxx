@@ -38,8 +38,8 @@ StD0Hists::StD0Hists(std::string fileBaseName = "", int harmonic)
    //D0 histograms
    const int nDimDaug = 5;
    int nBinsDaug[nDimDaug] = {9, 100, 10, 250, 10};//cent, pt, daughterpt1, m, daughterpt2
-   double xMinDaug[nDimDaug] = {0, 0, 0.6, 0, 0.6};
-   double xMaxDaug[nDimDaug] = {9, 10, 1.6, 2.5, 1.6};
+   double xMinDaug[nDimDaug] = {0, 0, 0.3, 0, 0.3};
+   double xMaxDaug[nDimDaug] = {9, 10, 1.3, 2.5, 1.3};
    // EtaSub Histograms
    const int nDimEtaSub = 4;
    int nBinsEtaSub[nDimEtaSub] = {9, 100, 50, 10};//cent, pt, m, dPhi, etaGap
