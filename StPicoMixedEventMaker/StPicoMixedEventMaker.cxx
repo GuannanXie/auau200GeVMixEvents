@@ -139,16 +139,16 @@ Int_t StPicoMixedEventMaker::Finish()
 #endif
 
      //Eta sub
-     mD0Hists->hD0EtaSubCentPtMDphi[ii]->Write();
-     mD0Hists->hD0EtaSubCentPtMDphiLikeSign[ii]->Write();
-     mD0Hists->hD0EtaSubCentPtMDphiMixed[ii]->Write();
-     mD0Hists->hD0EtaSubCentPtMDphiLikeSignMixed[ii]->Write();
+     // mD0Hists->hD0EtaSubCentPtMDphi[ii]->Write();
+     // mD0Hists->hD0EtaSubCentPtMDphiLikeSign[ii]->Write();
+     // mD0Hists->hD0EtaSubCentPtMDphiMixed[ii]->Write();
+     // mD0Hists->hD0EtaSubCentPtMDphiLikeSignMixed[ii]->Write();
      
      // Eta Gap
-     mD0Hists->hD0CentPtMDphiEtaGap[ii]->Write();
-     mD0Hists->hD0CentPtMDphiEtaGapLikeSign[ii]->Write();
-     mD0Hists->hD0CentPtMDphiEtaGapMixed[ii]->Write();
-     mD0Hists->hD0CentPtMDphiEtaGapLikeSignMixed[ii]->Write();
+     // mD0Hists->hD0CentPtMDphiEtaGap[ii]->Write();
+     // mD0Hists->hD0CentPtMDphiEtaGapLikeSign[ii]->Write();
+     // mD0Hists->hD0CentPtMDphiEtaGapMixed[ii]->Write();
+     // mD0Hists->hD0CentPtMDphiEtaGapLikeSignMixed[ii]->Write();
    }
 #ifdef __run_w_QA__
    // QA plots

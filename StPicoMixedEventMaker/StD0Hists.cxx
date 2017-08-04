@@ -65,16 +65,16 @@ StD0Hists::StD0Hists(std::string fileBaseName = "", int harmonic)
 #endif
 
      //Eta sub
-     hD0EtaSubCentPtMDphi[ii] = new THnF(Form("hD0EtaSubCentPtMDphi_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphi_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
-     hD0EtaSubCentPtMDphiLikeSign[ii] = new THnF(Form("hD0EtaSubCentPtMDphiLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
-     hD0EtaSubCentPtMDphiMixed[ii] = new THnF(Form("hD0EtaSubCentPtMDphiMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
-     hD0EtaSubCentPtMDphiLikeSignMixed[ii] = new THnF(Form("hD0EtaSubCentPtMDphiLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
+     // hD0EtaSubCentPtMDphi[ii] = new THnF(Form("hD0EtaSubCentPtMDphi_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphi_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
+     // hD0EtaSubCentPtMDphiLikeSign[ii] = new THnF(Form("hD0EtaSubCentPtMDphiLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
+     // hD0EtaSubCentPtMDphiMixed[ii] = new THnF(Form("hD0EtaSubCentPtMDphiMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
+     // hD0EtaSubCentPtMDphiLikeSignMixed[ii] = new THnF(Form("hD0EtaSubCentPtMDphiLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0EtaSubCentPtMDphiLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDimEtaSub, nBinsEtaSub, xMinEtaSub, xMaxEtaSub);
 
      //Eta gap
-     hD0CentPtMDphiEtaGap[ii] = new THnF(Form("hD0CentPtMDphiEtaGap_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGap_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
-     hD0CentPtMDphiEtaGapLikeSign[ii] = new THnF(Form("hD0CentPtMDphiEtaGapLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
-     hD0CentPtMDphiEtaGapMixed[ii] = new THnF(Form("hD0CentPtMDphiEtaGapMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
-     hD0CentPtMDphiEtaGapLikeSignMixed[ii] = new THnF(Form("hD0CentPtMDphiEtaGapLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
+     // hD0CentPtMDphiEtaGap[ii] = new THnF(Form("hD0CentPtMDphiEtaGap_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGap_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
+     // hD0CentPtMDphiEtaGapLikeSign[ii] = new THnF(Form("hD0CentPtMDphiEtaGapLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapLikeSign_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
+     // hD0CentPtMDphiEtaGapMixed[ii] = new THnF(Form("hD0CentPtMDphiEtaGapMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
+     // hD0CentPtMDphiEtaGapLikeSignMixed[ii] = new THnF(Form("hD0CentPtMDphiEtaGapLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), Form("hD0CentPtMDphiEtaGapLikeSignMixed_%s",mxeCuts::cutsSetName[ii].c_str()), nDim2, nBins2, xMin2, xMax2);
    }
 
    /*

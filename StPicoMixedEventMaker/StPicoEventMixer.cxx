@@ -201,22 +201,22 @@ void StPicoEventMixer::mixEvents()
 		{
 		  if (charge2 < 0)
 		    {
-		      mD0Hists->hD0EtaSubCentPtMDphi[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
+		      // mD0Hists->hD0EtaSubCentPtMDphi[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
 		    }
 		  else
 		    {
-		      mD0Hists->hD0EtaSubCentPtMDphiLikeSign[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
+		      // mD0Hists->hD0EtaSubCentPtMDphiLikeSign[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
 		    }
 		}
 	      else
 		{
 		  if (charge2 < 0)
 		    {
-		      mD0Hists->hD0EtaSubCentPtMDphiMixed[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
+		      // mD0Hists->hD0EtaSubCentPtMDphiMixed[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
 		    }
 		  else
 		    {
-		      mD0Hists->hD0EtaSubCentPtMDphiLikeSignMixed[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
+		      // mD0Hists->hD0EtaSubCentPtMDphiLikeSignMixed[ii]->Fill(toFillEtaSub, mEvents[0]->weight());
 		    }
 		}
 	    }
@@ -251,13 +251,13 @@ void StPicoEventMixer::mixEvents()
 		 if( !pass_cut_set[ii] ) continue;
 		 if (iEvt2 == 0)
 		   {
-		     if (charge2 < 0) mD0Hists->hD0CentPtMDphiEtaGap[ii]->Fill(toFill, mEvents[0]->weight());
-		     else mD0Hists->hD0CentPtMDphiEtaGapLikeSign[ii]->Fill(toFill, mEvents[0]->weight());
+		     // if (charge2 < 0) mD0Hists->hD0CentPtMDphiEtaGap[ii]->Fill(toFill, mEvents[0]->weight());
+		     // else mD0Hists->hD0CentPtMDphiEtaGapLikeSign[ii]->Fill(toFill, mEvents[0]->weight());
 		   }
 		 else
 		   {
-		     if (charge2 < 0) mD0Hists->hD0CentPtMDphiEtaGapMixed[ii]->Fill(toFill, mEvents[0]->weight());
-		     else mD0Hists->hD0CentPtMDphiEtaGapLikeSignMixed[ii]->Fill(toFill, mEvents[0]->weight());
+		     // if (charge2 < 0) mD0Hists->hD0CentPtMDphiEtaGapMixed[ii]->Fill(toFill, mEvents[0]->weight());
+		     // else mD0Hists->hD0CentPtMDphiEtaGapLikeSignMixed[ii]->Fill(toFill, mEvents[0]->weight());
 		   }	      
 	       }
 	    }
