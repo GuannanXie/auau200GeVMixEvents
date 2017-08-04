@@ -41,7 +41,7 @@ StD0Hists::StD0Hists(std::string fileBaseName = "", int harmonic)
    // double xMinDaug[nDimDaug] = {0, 0, 0.3, 0, 0.3};
    // double xMaxDaug[nDimDaug] = {9, 10, 1.3, 2.5, 1.3};
    const int nDimDaug = 7;
-   int nBinsDaug[nDimDaug] = {9, 100, 5, 100, 5, 4, 2};//cent, pt, daughterpt1, m, daughterpt2, rapidity, D0D0bar pion charge
+   int nBinsDaug[nDimDaug] = {9, 20, 5, 100, 5, 4, 2};//cent, pt, daughterpt1, m, daughterpt2, rapidity, D0D0bar pion charge
    double xMinDaug[nDimDaug] = {0, 0, 0.3, 1.5, 0.3, -1.0, -1.5};
    double xMaxDaug[nDimDaug] = {9, 10, 0.8, 2.5, 0.8, 1.0, 1.5};
 
