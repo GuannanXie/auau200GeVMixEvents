@@ -7,14 +7,14 @@ StMixerEvent::StMixerEvent() :  mVtx(StThreeVectorF()),
 {
 }
 StMixerEvent::StMixerEvent(StMixerEvent *t) : mVtx(t->mVtx), mBField(t->mBField),
-					      mWeight(t->mWeight), mQ(t->mQ), mQEtaPlusGap005(t->mQEtaPlusGap005), mQEtaMinusGap005(t->mQEtaMinusGap005),
-					      mTracks(t->mTracks),
-					      mKaonsIds(t->mKaonsIds), mPionsIds(t->mPionsIds)
+   mWeight(t->mWeight), mQ(t->mQ), mQEtaPlusGap005(t->mQEtaPlusGap005), mQEtaMinusGap005(t->mQEtaMinusGap005),
+   mTracks(t->mTracks),
+   mKaonsIds(t->mKaonsIds), mPionsIds(t->mPionsIds)
 {
-  for(int i=0; i<20; ++i) mQEta[i] = t->mQEta[i];
+   for (int i = 0; i < 20; ++i) mQEta[i] = t->mQEta[i];
 }
 StMixerEvent::StMixerEvent(StThreeVectorF const& vtx, float b, StEventPlane* eventPlaneMaker, float weight) :
-  mVtx(vtx), mBField(b), mWeight(weight)
+   mVtx(vtx), mBField(b), mWeight(weight)
 {
    mQ = eventPlaneMaker->Q();
    mQEtaPlusGap005 = eventPlaneMaker->QEtaPlusGap005();

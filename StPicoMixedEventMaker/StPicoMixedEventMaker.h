@@ -41,7 +41,7 @@ class StPicoMixedEventMaker : public StMaker
 {
 public:
    StPicoMixedEventMaker(char const* name, StPicoDstMaker* picoMaker, StRefMultCorr* grefmultCorrUtil, StEventPlane* eventPlaneMaker,
-                         char const* outputBaseFileName, char const* inputPicoList,int harmonic=2);
+                         char const* outputBaseFileName, char const* inputPicoList, int harmonic = 2);
    virtual ~StPicoMixedEventMaker();
    virtual Int_t Init();
    virtual Int_t Make();

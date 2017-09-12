@@ -41,7 +41,7 @@ public:
    void addPion(int);
    void addKaon(int);
    void addTrack(StMixerTrack const&);
-   void setPos(float,float,float);
+   void setPos(float, float, float);
    void setField(float);
    int getNoTracks() const;
    int getNoKaons() const;

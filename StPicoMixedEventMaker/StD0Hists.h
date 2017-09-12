@@ -28,7 +28,7 @@ class TString;
 class StD0Hists
 {
 public:
-  StD0Hists(std::string fileBaseName, int harmonic = 2);
+   StD0Hists(std::string fileBaseName, int harmonic = 2);
    virtual ~StD0Hists();
    void closeFile();
 #ifdef __run_w_QA__
@@ -65,7 +65,7 @@ public:
    THn* hD0CentPtEtaMDphiDaugLikeSignMixed[mxeCuts::nCutsSets];
 #endif
 
-   // Half eta's event plane 
+   // Half eta's event plane
    THn* hD0EtaSubCentPtMDphi[mxeCuts::nCutsSets];
    THn* hD0EtaSubCentPtMDphiLikeSign[mxeCuts::nCutsSets];
    THn* hD0EtaSubCentPtMDphiMixed[mxeCuts::nCutsSets];
