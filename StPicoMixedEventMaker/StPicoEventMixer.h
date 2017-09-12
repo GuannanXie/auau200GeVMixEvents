@@ -64,6 +64,7 @@ private:
    bool isKaon(StPicoTrack const*, StPicoDst const*, StThreeVectorF const& pVtx) const;
    bool isGoodPair(StMixerPair const& pair, topoCuts::TopologicalCuts const& cuts) const;
    int getD0PtIndex(StMixerPair const& pair, std::vector<float> const& edges) const;
+   int getCentIndex(int const icent, std::vector<float> const& edges) const;
    float getTofBeta(StPicoTrack const*, StPicoDst const*, StThreeVectorF const& pVtx) const;
 };
 

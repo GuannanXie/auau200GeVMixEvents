@@ -84,12 +84,12 @@ bool StPicoEventMixer::addPicoEvent(StPicoDst const* const picoDst, StThreeVecto
    mEvents.push_back(event);
    //   }
    /*
-   else
-   {
-   delete event;
-   return false;
-   }
-   */
+    else
+    {
+    delete event;
+    return false;
+    }
+    */
    //Returns true if need to do mixing, false if buffer has space still
    if (mEvents.size() == mEventsBufferSize)
       return true;
@@ -319,13 +319,15 @@ bool StPicoEventMixer::isCloseTrack(StPicoTrack const* const trk, StThreeVectorF
 bool StPicoEventMixer::isGoodPair(StMixerPair const& pair, topoCuts::TopologicalCuts const& cuts) const
 {
    int ptIndex = getD0PtIndex(pair, cuts.PtEdge);
+   int centIndex = getCentIndex(mCentBin, cuts.CentEdge);
+   if (ptIndex == -1 || centIndex == -1) return false;
    return (pair.m() > mxeCuts::massMin && pair.m() < mxeCuts::massMax &&
            std::abs(pair.lorentzVector().rapidity()) < cuts.RapidityCut &&
-           pair.particle1Dca() > cuts.pDca[ptIndex] && pair.particle2Dca() > cuts.kDca[ptIndex] &&
-           pair.dcaDaughters() < cuts.dcaDaughters[ptIndex] &&
-           pair.decayLength() > cuts.decayLength[ptIndex] &&
-           std::cos(pair.pointingAngle()) > cuts.cosTheta[ptIndex] &&
-           ((pair.decayLength()) * sin(pair.pointingAngle())) < cuts.dcaV0ToPv[ptIndex]);
+           pair.particle1Dca() > cuts.pDca[centIndex][ptIndex] && pair.particle2Dca() > cuts.kDca[centIndex][ptIndex] &&
+           pair.dcaDaughters() < cuts.dcaDaughters[centIndex][ptIndex] &&
+           pair.decayLength() > cuts.decayLength[centIndex][ptIndex] &&
+           std::cos(pair.pointingAngle()) > cuts.cosTheta[centIndex][ptIndex] &&
+           ((pair.decayLength()) * sin(pair.pointingAngle())) < cuts.dcaV0ToPv[centIndex][ptIndex]);
 }//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 int StPicoEventMixer::getD0PtIndex(StMixerPair const& pair, std::vector<float> const& edges) const
@@ -335,8 +337,19 @@ int StPicoEventMixer::getD0PtIndex(StMixerPair const& pair, std::vector<float> c
       if ((pair.pt() >= edges[i]) && (pair.pt() < edges[i + 1]))
          return i;
    }
-   return edges.size() - 1;
+   return - 1;
 }
+//-----------------------------------------------------------------------------
+int StPicoEventMixer::getCentIndex(int const icent, std::vector<float> const& edges) const
+{
+   for (int i = 0; i < edges.size(); i++)
+   {
+      if ((icent >= edges[i]) && (icent < edges[i + 1]))
+         return i;
+   }
+   return - 1;
+}
+//-----------------------------------------------------------------------------
 float StPicoEventMixer::getTofBeta(StPicoTrack const* const trk, StPicoDst const* const picoDst, StThreeVectorF const& pVertex) const
 {
    int index2tof = trk->bTofPidTraitsIndex();
